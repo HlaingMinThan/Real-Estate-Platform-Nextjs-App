@@ -1,5 +1,6 @@
 import fetchApi from "../utils/fetchApi";
 import Banner from "../components/Banner";
+import PropertyList from "../components/PropertyList";
 
 /*--------get initial data and automatically pass as a prop to page component------------*/
 export async function getStaticProps() {
@@ -18,7 +19,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log(propertiesForRent, propertiesForSale);
   return (
     <div>
       <Banner
@@ -33,6 +33,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         linkName="/search?purpose=for-rent"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
+      <PropertyList properties={propertiesForRent} />
       <Banner
         purpose="BUY A HOME"
         title1=" Find, Buy & Own Your"
@@ -45,6 +46,8 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         linkName="/search?purpose=for-sale"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
+
+      <PropertyList properties={propertiesForSale} />
     </div>
   );
 }
