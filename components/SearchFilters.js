@@ -10,7 +10,9 @@ export default function SearchFilters() {
     let query = router.query;
     let values = getFilterValues(filterValues);
     values.forEach((item) => {
-      query[item.name] = item.value;
+      if (item.value && filterValues[item.name]) {
+        query[item.name] = item.value;
+      }
     });
 
     router.push({ pathname, query });
