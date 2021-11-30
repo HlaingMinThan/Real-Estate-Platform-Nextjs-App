@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Flex, Box, Text } from "@chakra-ui/react";
-export default function ({
+export default function Banner({
   purpose,
   title1,
   title2,
@@ -15,7 +15,7 @@ export default function ({
 }) {
   return (
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="5">
-      <Image src={imageUrl} width={500} height={300} />
+      <Image src={imageUrl} width={500} height={300} alt="image" />
       <Box p="10">
         <Text color="gray.500" fontSize="sm" fontWeight="medium">
           {purpose}

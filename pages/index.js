@@ -2,7 +2,7 @@ import fetchApi from "../utils/fetchApi";
 import Banner from "../components/Banner";
 import PropertyList from "../components/PropertyList";
 
-/*--------get initial data and automatically pass as a prop to page component------------*/
+/*--------get initial data and automatically pass as a prop to page component at build time-----------*/
 export async function getStaticProps() {
   let propertiesForSale = await fetchApi(
     "/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6"

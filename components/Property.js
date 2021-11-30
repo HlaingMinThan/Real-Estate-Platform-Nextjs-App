@@ -10,7 +10,7 @@ import millify from "millify";
 
 import DefaultImage from "../assets/images/house.jpeg";
 
-export default function ({ property }) {
+export default function Property({ property }) {
   const {
     coverPhoto,
     price,
@@ -23,7 +23,7 @@ export default function ({ property }) {
     isVerified,
   } = property;
   return (
-    <Link href={`/property/${property.externalID}`} passHref>
+    <Link href={`/properties/${property.externalID}`} passHref>
       <Flex
         flexWrap="wrap"
         w="370px"
@@ -33,6 +33,7 @@ export default function ({ property }) {
       >
         <Box>
           <Image
+            alt="image"
             src={coverPhoto ? coverPhoto.url : DefaultImage}
             width={400}
             height={260}
